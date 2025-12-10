@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI个性化测验入口</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; }
+    input { padding: 10px; width: 260px; }
+    button { padding: 10px 20px; margin-left: 10px; }
+  </style>
+</head>
+
+<body>
+  <h2>AI个性化学习测验入口</h2>
+  <p>请输入你的学号：</p>
+
+  <input id="sid" placeholder="例如：20240101"/>
+  <button onclick="go()">开始测验</button>
+
+  <!-- 加载 map（必须放在 go() 前面） -->
+  <script src="assigning_map.js"></script>
+
+  <script>
+    function go() {
+      const id = document.getElementById("sid").value.trim();
+      if (!assigningMap[id]) {
+        alert("请检查学号是否正确");
+        return;
+      }
+      // 跳转到对应问卷星页面
+      window.location.href = assigningMap[id];
+    }
+  </script>
+</body>
+</html>
