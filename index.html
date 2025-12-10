@@ -1,39 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>第二次作业反馈测试入口</title>
-  <style>
-    body { font-family: sans-serif; padding: 40px; }
-    input { padding: 10px; width: 260px; }
-    button { padding: 10px 20px; margin-left: 10px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>问卷跳转页面</title>
+    <script src="assigning_map.js"></script>
+
+    <style>
+        body {
+            background: #f3f4f6;
+            font-family: "Microsoft YaHei", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 420px;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input {
+            width: 95%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4a90e2;
+            border: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        button:hover {
+            background: #357ABD;
+        }
+
+        #msg {
+            margin-top: 12px;
+            color: #c0392b;
+            font-size: 14px;
+            height: 18px;
+        }
+    </style>
 </head>
 
 <body>
-  <h2>第二次作业反馈测试入口<</h2>
-  <p>请输入你的学号：</p>
+    <div class="container">
+        <h2>请输入你的学号</h2>
+        <input id="sid" type="text" placeholder="例如：25351099">
+        <button onclick="jumpToSurvey()">进入测验</button>
+        <div id="msg"></div>
+    </div>
 
-  <input id="sid" placeholder="例如：25351099"/>
-  <button onclick="go()">开始测验</button>
+    <script>
+        function jumpToSurvey() {
+            const sid = document.getElementById("sid").value.trim();
+            const msg = document.getElementById("msg");
 
-  <!-- 加载 assignment_map（文件名按你上传的为准） -->
-  <script src="assigning_map.js"></script>
+            if (sid === "") {
+                msg.textContent = "请输入学号。";
+                return;
+            }
 
-  <script>
-    function go() {
-      const id = document.getElementById("sid").value.trim();
+            if (assignment_map.hasOwnProperty(sid)) {
+                msg.textContent = "";
+                window.location.href = assignment_map[sid];
+            } else {
+                msg.textContent = "学号不存在，请确认输入是否正确。";
+            }
+        }
+    </script>
 
-      // assignment_map 来自 assigning_map.js
-      if (!assignment_map[id]) {
-        alert("学号不存在，请检查输入是否正确");
-        return;
-      }
-
-      // 跳转到对应问卷页面
-      window.location.href = assignment_map[id];
-    }
-  </script>
 </body>
 </html>
-
