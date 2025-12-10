@@ -14,21 +14,24 @@
   <h2>AI个性化学习测验入口</h2>
   <p>请输入你的学号：</p>
 
-  <input id="sid" placeholder="例如：20240101"/>
+  <input id="sid" placeholder="例如：25351099"/>
   <button onclick="go()">开始测验</button>
 
-  <!-- 加载 map（必须放在 go() 前面） -->
+  <!-- 加载 assignment_map（文件名按你上传的为准） -->
   <script src="assigning_map.js"></script>
 
   <script>
     function go() {
       const id = document.getElementById("sid").value.trim();
-      if (!assigningMap[id]) {
-        alert("请检查学号是否正确");
+
+      // assignment_map 来自 assigning_map.js
+      if (!assignment_map[id]) {
+        alert("学号不存在，请检查输入是否正确");
         return;
       }
-      // 跳转到对应问卷星页面
-      window.location.href = assigningMap[id];
+
+      // 跳转到对应问卷页面
+      window.location.href = assignment_map[id];
     }
   </script>
 </body>
