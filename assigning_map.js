@@ -55,6 +55,7 @@ const assignment_map = {
   "25351063": "https://ks.wjx.com/vm/eqH0Tab.aspx",
   "25351064": "https://ks.wjx.com/vm/eqH0Tab.aspx",
   "25351053": "https://ks.wjx.com/vm/eqH0Tab.aspx",
-  "25351006": "https://ks.wjx.com/vm/eqH0Tab.aspx"
+  "25952145": "https://ks.wjx.com/vm/eqH0Tab.aspx"
 };
+
 
