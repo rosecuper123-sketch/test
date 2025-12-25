@@ -1,4 +1,4 @@
-const assigning_map = {
+const assignment_map = {
     "25351062": https://ks.wjx.com/vm/OtSAvNb.aspx# 
     "25351060": https://ks.wjx.com/vm/QfWNDfV.aspx# 
     "25351059": https://ks.wjx.com/vm/t4hadF9.aspx# 
