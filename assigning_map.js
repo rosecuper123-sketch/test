@@ -1,4 +1,4 @@
-const assignment_map = {
+const assigning_map = {
     "25351062": https://ks.wjx.com/vm/OtSAvNb.aspx# 
     "25351060": https://ks.wjx.com/vm/QfWNDfV.aspx# 
     "25351059": https://ks.wjx.com/vm/t4hadF9.aspx# 
@@ -57,3 +57,4 @@ const assignment_map = {
     "25334061": https://ks.wjx.com/vm/e70norH.aspx# 
     "25327033": https://ks.wjx.com/vm/e70norH.aspx# 
 };
+
